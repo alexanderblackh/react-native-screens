@@ -27,7 +27,10 @@ On Android the View state is not persisted consistently across Activity restarts
 For most people using an app built from the react-native template, that means editing `MainActivity.java`, likely located in `android/app/src/main/java/<your package name>/MainActivity.java`
 
 You should add this code, which specifically discards any Activity state persisted during the Activity restart process, to avoid inconsistencies that lead to crashes.
-Please note that the override code should not be placed inside `MainActivityDelegate`, but rather directly in `MainActivity`.
+
+Please note the following:
+1) The override code should not be placed inside `MainActivityDelegate`, but rather directly in `MainActivity`. 
+2) If your MainActivity looks different, than the following simply put the code early in the MainActivity class AND include the import statement.
 
 ```java
 import android.os.Bundle;
